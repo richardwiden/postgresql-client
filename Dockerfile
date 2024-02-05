@@ -1,0 +1,5 @@
+ARG BASE_IMAGE=alpine:3.19
+FROM ${BASE_IMAGE}
+ARG POSTGRES_VERSION=12
+RUN apk --no-cache add postgresql${POSTGRES_VERSION}-client
+ENTRYPOINT [ "psql" ]
