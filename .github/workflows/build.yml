@@ -17,7 +17,7 @@ jobs:
           - postgres_version: 12
             alpine_postgres_version_string: ""
             alpine_image: "alpine:3.12.12"
-            suffix: ""
+            suffix: "-12"
           - postgres_version: 14
             alpine_postgres_version_string: "14"
             alpine_image: "alpine:3.19.1"
