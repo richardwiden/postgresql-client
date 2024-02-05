@@ -15,10 +15,16 @@ jobs:
       matrix:
         include:
           - postgres_version: 12
+            alpine_postgres_version_string: ""
+            alpine_image: "alpine:3.12"
             suffix: ""
           - postgres_version: 14
+            alpine_postgres_version_string: "14"
+            alpine_image: "alpine:3.19"
             suffix: "-14"
           - postgres_version: 15
+            alpine_postgres_version_string: "15"
+            alpine_image: "alpine:3.19"
             suffix: "-15"
     steps:
       - uses: actions/checkout@v4
@@ -63,8 +69,8 @@ jobs:
           context: docker
           push: true
           build-args: |
-            "BASE_IMAGE="alpine:3.19"
-            "POSTGRES_VERSION=${{ matrix.postgres_version }}"
+            "BASE_IMAGE=${{matrix.alpine_image}}
+            "POSTGRES_VERSION=${{ matrix.alpine_postgres_version_string }}"
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
