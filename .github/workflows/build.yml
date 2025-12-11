@@ -20,12 +20,16 @@ jobs:
             suffix: "-12"
           - postgres_version: 14
             alpine_postgres_version_string: "14"
-            alpine_image: "alpine:3.19.1"
+            alpine_image: "alpine:3.23.0"
             suffix: "-14"
           - postgres_version: 15
             alpine_postgres_version_string: "15"
-            alpine_image: "alpine:3.19.1"
+            alpine_image: "alpine:3.23.0"
             suffix: "-15"
+          - postgres_version: 18
+            alpine_postgres_version_string: "18"
+            alpine_image: "alpine:3.23.0"
+            suffix: "-18"
     steps:
       - uses: actions/checkout@v4
       - name: Release
