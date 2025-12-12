@@ -26,6 +26,14 @@ jobs:
             alpine_postgres_version_string: "15"
             alpine_image: "alpine:3.23.0"
             suffix: "-15"
+          - postgres_version: 16
+            alpine_postgres_version_string: "16"
+            alpine_image: "alpine:3.23.0"
+            suffix: "-16"
+          - postgres_version: 17
+            alpine_postgres_version_string: "17"
+            alpine_image: "alpine:3.23.0"
+            suffix: "-17"
           - postgres_version: 18
             alpine_postgres_version_string: "18"
             alpine_image: "alpine:3.23.0"
